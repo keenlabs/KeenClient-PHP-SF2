@@ -1,0 +1,32 @@
+{
+    "name":         "keen-io/keen-io-bundle",
+    "type":         "library",
+    "description":  "Symfony2 Bundle for Keen IO",
+    "keywords":     ["keen", "keen.io", "events", "analytics", "symfony", "bundle" ],
+    "homepage":     "https://github.com/keenlabs/KeenClient-PHP-Sf2",
+    "license":      "MIT",
+    "authors":      [
+        {
+            "name":     "Keith Kirk",
+            "email":    "kmfk00@gmail.com",
+            "role":     "developer",
+            "homepage": "https://github.com/kmfk"
+        }
+    ],
+    "support":     {
+        "email": "kmfk00@gmail.com"
+    },
+    "require":     {
+        "php":              ">=5.3.0",
+        "keen-io/keen-io":  "~2.1"
+    },
+    "require-dev": {
+        "symfony/symfony": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "KeenIO\\Bundle\\KeenIOBundle": ""
+        }
+    },
+    "target-dir": "KeenIO/Bundle/KeenIOBundle"
+}

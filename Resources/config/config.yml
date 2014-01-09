@@ -1,0 +1,7 @@
+#KeenIOBundle Configuration Example
+keen_io:
+    version:    3.0
+    project_id: 123
+    master_key: 123
+    write_key:  123
+    read_key:   123
