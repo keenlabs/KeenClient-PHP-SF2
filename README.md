@@ -13,7 +13,7 @@ The best method of installation is through the use of composer.
 
 ```json
 "require": {
-    "keen-io/keen-io-bundle": "dev-master",
+    "keen-io/keen-io-bundle": "~1.0",
 }
 ```
 
