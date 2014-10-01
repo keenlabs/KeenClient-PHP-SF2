@@ -1,6 +1,6 @@
 {
     "name":         "keen-io/keen-io-bundle",
-    "type":         "library",
+    "type":         "symfony-bundle",
     "description":  "Symfony2 Bundle for Keen IO",
     "keywords":     ["keen", "keen.io", "events", "analytics", "symfony", "bundle" ],
     "homepage":     "https://github.com/keenlabs/KeenClient-PHP-Sf2",
