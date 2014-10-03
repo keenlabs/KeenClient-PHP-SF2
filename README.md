@@ -1,6 +1,8 @@
 Keen IO Symfony2 Bundle
 =======================
 
+[![Build Status](https://travis-ci.org/keenlabs/KeenClient-PHP-SF2.svg)](https://travis-ci.org/keenlabs/KeenClient-PHP-SF2)
+
 ###Overview
 
 The Keen IO Symfony2 Bundle allows you to quickly and easily use the [Keen IO PHP Client](https://github.com/keenlabs/KeenClient-PHP) in your Symfony 2 applications.
@@ -12,8 +14,10 @@ The best method of installation is through the use of composer.
 #####Add the bundle to Composer
 
 ```json
-"require": {
-    "keen-io/keen-io-bundle": "~1.0",
+{
+    "require": {
+        "keen-io/keen-io-bundle": "~1.1"
+    }
 }
 ```
 
@@ -59,7 +63,7 @@ public function indexAction()
 {
     $client = $this->get('keen_io');
     $client->addEvent('example_collection', array( 'foo' => 'bar' ));
-    
+
     // ...
 }
 ```
@@ -71,7 +75,7 @@ Or it can be passed into your services through dependency injection:
 
 # Example Tracking Service
 tracking.service:
-	class: Acme\AcmeBundle\Service\Tracking
+	class: Acme\Bundle\AcmeBundle\Service\Tracking
     arguments:
     	- @keen_io
 ```
