@@ -1,6 +1,8 @@
 Keen IO Symfony2 Bundle
 =======================
 
+[![Build Status](https://travis-ci.org/keenlabs/KeenClient-PHP-SF2.svg)](https://travis-ci.org/keenlabs/KeenClient-PHP-SF2)
+
 ###Overview
 
 The Keen IO Symfony2 Bundle allows you to quickly and easily use the [Keen IO PHP Client](https://github.com/keenlabs/KeenClient-PHP) in your Symfony 2 applications.
@@ -14,7 +16,7 @@ The best method of installation is through the use of composer.
 ```json
 {
     "require": {
-        "keen-io/keen-io-bundle": "~1.0"
+        "keen-io/keen-io-bundle": "~1.1"
     }
 }
 ```
