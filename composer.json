@@ -8,25 +8,25 @@
     "authors":      [
         {
             "name":     "Keith Kirk",
-            "email":    "kmfk00@gmail.com",
+            "email":    "keith@kmfk.io",
             "role":     "developer",
-            "homepage": "https://github.com/kmfk"
+            "homepage": "http://kmfk.io"
         }
     ],
     "support":     {
-        "email": "kmfk00@gmail.com"
+        "email": "keith@kmfk.io"
     },
     "require":     {
-        "php":              ">=5.3.0",
-        "keen-io/keen-io":  "~2.1"
+        "php":                      ">=5.3.0",
+        "keen-io/keen-io":          "~2.1",
+        "symfony/framework-bundle": "~2.3"
     },
     "require-dev": {
-        "symfony/symfony": "dev-master"
+        "phpunit/phpunit": "~3.7"
     },
     "autoload": {
-        "psr-0": {
-            "KeenIO\\Bundle\\KeenIOBundle": ""
+        "psr-4": {
+            "KeenIO\\Bundle\\KeenIOBundle\\": "src/"
         }
-    },
-    "target-dir": "KeenIO/Bundle/KeenIOBundle"
+    }
 }

@@ -12,8 +12,10 @@ The best method of installation is through the use of composer.
 #####Add the bundle to Composer
 
 ```json
-"require": {
-    "keen-io/keen-io-bundle": "~1.0",
+{
+    "require": {
+        "keen-io/keen-io-bundle": "~1.0"
+    }
 }
 ```
 
@@ -59,7 +61,7 @@ public function indexAction()
 {
     $client = $this->get('keen_io');
     $client->addEvent('example_collection', array( 'foo' => 'bar' ));
-    
+
     // ...
 }
 ```
@@ -71,7 +73,7 @@ Or it can be passed into your services through dependency injection:
 
 # Example Tracking Service
 tracking.service:
-	class: Acme\AcmeBundle\Service\Tracking
+	class: Acme\Bundle\AcmeBundle\Service\Tracking
     arguments:
     	- @keen_io
 ```
