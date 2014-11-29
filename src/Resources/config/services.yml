@@ -1,5 +1,0 @@
-services:
-    keen_io:
-        class: KeenIO\Client\KeenIOClient
-        arguments:
-            - %keen_io%
