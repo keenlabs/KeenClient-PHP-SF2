@@ -1,16 +1,33 @@
 language: php
 
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
 php:
   - 5.3
+  - 5.4
+  # 5.5 and 5.6 are already covered by the jobs running against specific Symfony versions. no need to duplicate them here
+  - 7.0
+  - hhvm
 
-env:
-    - SYMFONY_VERSION=2.3.*
-    - SYMFONY_VERSION=2.4.*
-    - SYMFONY_VERSION=2.5.*
+matrix:
+  include:
+    # force testing against Symfony LTS versions
+    - php: 5.5
+      env: SYMFONY_VERSION=2.3.*
+    - php: 5.6
+      env: SYMFONY_VERSION=2.7.*
+    # Test against lowest dependencies
+    - php: 5.6
+      env: COMPOSER_FLAGS='--prefer-lowest --prefer-stable'
 
-before_script:
-    - composer self-update
-    - composer require symfony/framework-bundle:${SYMFONY_VERSION} --no-update
-    - composer install --dev --prefer-source
+before_install:
+  - if [ "$SYMFONY_VERSION" != "" ]; then composer require --dev --no-update symfony/symfony=$SYMFONY_VERSION; fi
+
+install:
+  - composer update $COMPOSER_FLAGS
 
 script: phpunit --coverage-text
