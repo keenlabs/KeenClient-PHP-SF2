@@ -5,7 +5,6 @@ namespace KeenIO\Bundle\KeenIOBundle\DependencyInjection;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
-use KeenIO\Bundle\KeenIOBundle\DependencyInjection\Configuration;
 
 class KeenIOExtension extends Extension
 {
@@ -24,8 +23,17 @@ class KeenIOExtension extends Extension
         $container->setParameter('keen_io.class', 'KeenIO\\Client\\KeenIOClient');
         $container->setParameter('keen_io_factory.class', 'KeenIO\\Client\\KeenIOClient');
 
-        $container->setDefinition('keen_io', new Definition('%keen_io.class%', array($arguments)))
-            ->setFactoryClass('%keen_io_factory.class%')
-            ->setFactoryMethod('factory');
+        $definition = new Definition('%keen_io.class%', array($arguments));
+
+        if (method_exists($definition, 'setFactory')) {
+            $definition->setFactory(array('%keen_io_factory.class%', 'factory'));
+        } else {
+            // BC layer for Symfony 2.5 and older
+            $definition
+                ->setFactoryClass('%keen_io_factory.class%')
+                ->setFactoryMethod('factory');
+        }
+
+        $container->setDefinition('keen_io', $definition);
     }
 }
