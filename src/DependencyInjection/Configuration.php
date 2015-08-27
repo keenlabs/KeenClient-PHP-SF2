@@ -14,6 +14,11 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->scalarNode('version')
+                    ->beforeNormalization()
+                        // force the version to be a string, even if the Yaml config files parsed it as float
+                        ->ifTrue(function ($v) { return !is_string($v) && is_numeric($v); })
+                        ->then(function ($v) { return number_format($v, 1); })
+                    ->end()
                     ->defaultValue('3.0')
                     ->info('The Keen IO API Version')
                     ->example('3.0')
