@@ -6,13 +6,10 @@ use KeenIO\Bundle\KeenIOBundle\DependencyInjection\KeenIOExtension;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 
 class KeenIOExtensionTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * QPush Extension
-     *
      * @var KeenIOExtension
      */
     private $extension;
