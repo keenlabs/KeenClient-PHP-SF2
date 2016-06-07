@@ -19,7 +19,7 @@
     "require":     {
         "php":                      ">=5.3.3",
         "keen-io/keen-io":          "~2.1",
-        "symfony/framework-bundle": "~2.3"
+        "symfony/framework-bundle": "~2.3|~3.0"
     },
     "require-dev": {
         "symfony/phpunit-bridge": "~2.7",
