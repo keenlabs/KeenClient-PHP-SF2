@@ -19,10 +19,13 @@
     "require":     {
         "php":                      ">=5.3.3",
         "keen-io/keen-io":          "~2.1",
-        "symfony/framework-bundle": "~2.3"
+        "symfony/config": "~2.3 || ~3.0",
+        "symfony/dependency-injection": "~2.3 || ~3.0",
+        "symfony/http-kernel": "~2.3 || ~3.0"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "~2.7",
+        "symfony/phpunit-bridge": "~3.2",
+        "symfony/yaml": "~2.3 || ~3.0",
         "phpunit/phpunit": "~4.5"
     },
     "autoload": {
