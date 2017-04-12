@@ -37,5 +37,6 @@ class KeenIOExtensionTest extends \PHPUnit_Framework_TestCase
         $this->container->compile();
 
         $this->assertTrue($this->container->has('keen_io'));
+        $this->assertInstanceOf('KeenIO\Client\KeenIOClient', $this->container->get('keen_io'));
     }
 }
