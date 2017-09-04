@@ -7,15 +7,18 @@ cache:
     - $HOME/.composer/cache/files
 
 php:
-  - 5.3
   - 5.4
   # 5.5 and 5.6 are already covered by the jobs running against specific Symfony versions. no need to duplicate them here
   - 7.0
   - 7.1
-  - hhvm
 
 matrix:
   include:
+    # force specific dist environment for runtimes needing it (HHVM and PHP 5.3 are not available everywhere)
+    - php: 5.3
+      dist: precise
+    - php: hhvm
+      dist: trusty
     # force testing against Symfony LTS versions
     - php: 5.5
       env: SYMFONY_VERSION=2.7.*
