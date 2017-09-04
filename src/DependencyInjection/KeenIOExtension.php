@@ -2,6 +2,7 @@
 
 namespace KeenIO\Bundle\KeenIOBundle\DependencyInjection;
 
+use Symfony\Component\DependencyInjection\Alias;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
@@ -35,5 +36,8 @@ class KeenIOExtension extends Extension
         }
 
         $container->setDefinition('keen_io', $definition);
+
+        // Support autowiring in Symfony 3.3+
+        $container->setAlias('KeenIO\Client\KeenIOClient', new Alias('keen_io', false));
     }
 }
