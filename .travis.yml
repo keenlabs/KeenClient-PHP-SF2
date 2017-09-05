@@ -14,11 +14,9 @@ php:
 
 matrix:
   include:
-    # force specific dist environment for runtimes needing it (HHVM and PHP 5.3 are not available everywhere)
+    # force specific dist environment for runtimes needing it (PHP 5.3 is not available on trusty)
     - php: 5.3
       dist: precise
-    - php: hhvm
-      dist: trusty
     # force testing against Symfony LTS versions
     - php: 5.5
       env: SYMFONY_VERSION=2.7.*
