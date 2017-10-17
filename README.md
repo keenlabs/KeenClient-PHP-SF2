@@ -7,6 +7,9 @@ Keen IO Symfony2 Bundle
 
 The Keen IO Symfony2 Bundle allows you to quickly and easily use the [Keen IO PHP Client](https://github.com/keenlabs/KeenClient-PHP) in your Symfony 2 applications.
 
+### Community-Supported SDK
+This is an _unofficial_ community supported SDK. 
+
 ### KeenIO Bundle Installation
 
 The best method of installation is through the use of composer.
@@ -82,7 +85,7 @@ tracking.service:
 
 Questions & Support
 -------------------
-If you have any questions, bugs, or suggestions, please report them via Github Issues. Or, come chat with us anytime at users.keen.io. We'd love to hear your feedback and ideas!
+If you have any questions, bugs, or suggestions, please report them via Github Issues. Or, come chat with us anytime at http://keen.chat. We'd love to hear your feedback and ideas!
 
 Contributing
 ------------
