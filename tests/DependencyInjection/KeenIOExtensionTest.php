@@ -3,11 +3,12 @@
 namespace KeenIO\Bundle\KeenIOBundle\Tests\DependencyInjection;
 
 use KeenIO\Bundle\KeenIOBundle\DependencyInjection\KeenIOExtension;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class KeenIOExtensionTest extends \PHPUnit_Framework_TestCase
+class KeenIOExtensionTest extends TestCase
 {
     /**
      * @var KeenIOExtension
