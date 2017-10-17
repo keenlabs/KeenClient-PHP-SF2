@@ -32,4 +32,4 @@ before_install:
 install:
   - composer update $COMPOSER_FLAGS
 
-script: phpunit --coverage-text
+script: vendor/bin/phpunit --coverage-text
