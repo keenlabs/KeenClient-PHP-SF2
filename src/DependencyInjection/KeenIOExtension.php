@@ -24,6 +24,7 @@ class KeenIOExtension extends Extension
         $container->setParameter('keen_io_factory.class', 'KeenIO\\Client\\KeenIOClient');
 
         $definition = new Definition('%keen_io.class%', array($arguments));
+        $definition->setPublic(true);
 
         if (method_exists($definition, 'setFactory')) {
             $definition->setFactory(array('%keen_io_factory.class%', 'factory'));
