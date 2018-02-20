@@ -1,7 +1,7 @@
 {
     "name":         "keen-io/keen-io-bundle",
     "type":         "symfony-bundle",
-    "description":  "Symfony2 Bundle for Keen IO",
+    "description":  "Symfony Bundle for Keen IO",
     "keywords":     ["keen", "keen.io", "events", "analytics", "symfony", "bundle" ],
     "homepage":     "https://github.com/keenlabs/KeenClient-PHP-Sf2",
     "license":      "MIT",
@@ -19,13 +19,13 @@
     "require":     {
         "php":                      ">=5.3.3",
         "keen-io/keen-io":          "~2.1",
-        "symfony/config": "~2.3 || ~3.0",
-        "symfony/dependency-injection": "~2.3 || ~3.0",
-        "symfony/http-kernel": "~2.3 || ~3.0"
+        "symfony/config": "^2.3 || ^3.0 || ^4.0",
+        "symfony/dependency-injection": "^2.3 || ^3.0 || ^4.0",
+        "symfony/http-kernel": "^2.3 || ^3.0 || ^4.0"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "~3.3",
-        "symfony/yaml": "~2.3 || ~3.0",
+        "symfony/phpunit-bridge": "^4.0",
+        "symfony/yaml": "^2.3 || ^3.0 || ^4.0",
         "phpunit/phpunit": "~4.8.35 || ~5.7 || ~6"
     },
     "autoload": {
