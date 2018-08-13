@@ -22,7 +22,7 @@ class KeenIOExtensionTest extends TestCase
      */
     private $container;
 
-    public function setUp()
+    protected function setUp()
     {
         $this->extension = new KeenIOExtension();
         $this->container = new ContainerBuilder();

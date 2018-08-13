@@ -11,6 +11,7 @@ php:
   # 5.5 and 5.6 are already covered by the jobs running against specific Symfony versions. no need to duplicate them here
   - 7.0
   - 7.1
+  - 7.2
 
 matrix:
   include:
@@ -19,15 +20,15 @@ matrix:
       dist: precise
     # force testing against Symfony LTS versions
     - php: 5.5
-      env: SYMFONY_VERSION=2.7.*
+      env: SYMFONY_VERSION=^2
     - php: 5.6
-      env: SYMFONY_VERSION=2.8.*
+      env: SYMFONY_VERSION=^3
     # Test against lowest dependencies
     - php: 5.6
       env: COMPOSER_FLAGS='--prefer-lowest --prefer-stable'
 
 before_install:
-  - if [ "$SYMFONY_VERSION" != "" ]; then composer require --dev --no-update symfony/symfony=$SYMFONY_VERSION; fi
+  - if [ "$SYMFONY_VERSION" != "" ]; then composer require --dev --no-update symfony/lts=$SYMFONY_VERSION; fi
 
 install:
   - composer update $COMPOSER_FLAGS
