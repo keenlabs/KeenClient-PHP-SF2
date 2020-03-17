@@ -24,7 +24,8 @@
         "symfony/http-kernel": "^3.4.26 || ^4.3"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^4.4",
+        "symfony/phpunit-bridge": "^5.0.5",
+        "symfony/error-handler": "^4.4.5 || ^5.0.5",
         "symfony/yaml": "^3.4.26 || ^4.3",
         "phpunit/phpunit": "^8.5.2 || ^9.0.1"
     },

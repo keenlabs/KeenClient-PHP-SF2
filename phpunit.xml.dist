@@ -27,4 +27,8 @@
         <log type="coverage-text" target="php://stdout" />
         <log type="coverage-html" target="coverage/" />
     </logging>
+
+    <listeners>
+        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
+    </listeners>
 </phpunit>
