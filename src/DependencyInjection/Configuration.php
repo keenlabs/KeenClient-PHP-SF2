@@ -8,8 +8,14 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode    = $treeBuilder->root('keen_io');
+        $treeBuilder = new TreeBuilder('keen_io');
+
+        if (method_exists($treeBuilder, 'getRootNode')) {
+            $rootNode = $treeBuilder->getRootNode();
+        } else {
+            // BC layer for Symfony < 4.2
+            $rootNode = $treeBuilder->root('keen_io');
+        }
 
         $rootNode
             ->children()
