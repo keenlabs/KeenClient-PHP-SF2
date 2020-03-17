@@ -26,15 +26,7 @@ class KeenIOExtension extends Extension
 
         $definition = new Definition('%keen_io.class%', array($arguments));
         $definition->setPublic(true);
-
-        if (method_exists($definition, 'setFactory')) {
-            $definition->setFactory(array('%keen_io_factory.class%', 'factory'));
-        } else {
-            // BC layer for Symfony 2.5 and older
-            $definition
-                ->setFactoryClass('%keen_io_factory.class%')
-                ->setFactoryMethod('factory');
-        }
+        $definition->setFactory(array('%keen_io_factory.class%', 'factory'));
 
         $container->setDefinition('keen_io', $definition);
 
