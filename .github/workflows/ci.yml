@@ -35,7 +35,7 @@ jobs:
                     - php: '7.2'
                       name_suffix: ' (Symfony 3)'
                       composer_flags: ''
-                      symfony_version: '^3'
+                      symfony_version: '3.4.*'
 
         steps:
             -   uses: actions/checkout@v3
@@ -44,11 +44,15 @@ jobs:
                     coverage: "none"
                     php-version: "${{ matrix.php }}"
 
-            -   name: Configure Symfony version
-                if: "matrix.symfony_version != ''"
-                run: composer require --dev --no-update symfony/lts=${{ matrix.symfony_version }}
+            -   name: Install symfony/flex
+                if: matrix.symfony_version != ''
+                run: |
+                    composer config --global --no-plugins allow-plugins.symfony/flex true &&
+                    composer global require symfony/flex
 
             -   name: Install dependencies
+                env:
+                    SYMFONY_REQUIRE: ${{ matrix.symfony_version }}
                 run: composer update --ansi --no-progress --prefer-dist --no-interaction ${{ matrix.composer_flags }}
 
             -   name: Run tests
