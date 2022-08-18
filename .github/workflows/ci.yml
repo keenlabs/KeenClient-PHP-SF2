@@ -32,10 +32,6 @@ jobs:
                       name_suffix: ' (lowest deps)'
                       composer_flags: '--prefer-lowest'
                     # Test against Symfony LTS versions
-                    - php: '7.2'
-                      name_suffix: ' (Symfony 3)'
-                      composer_flags: ''
-                      symfony_version: '3.4.*'
                     - php: '8.1'
                       name_suffix: ' (Symfony 4)'
                       composer_flags: ''
