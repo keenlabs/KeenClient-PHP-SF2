@@ -1,7 +1,7 @@
 Keen IO Symfony2 Bundle
 =======================
 
-[![Build Status](https://travis-ci.org/keenlabs/KeenClient-PHP-SF2.svg)](https://travis-ci.org/keenlabs/KeenClient-PHP-SF2)
+[![CI](https://github.com/keenlabs/KeenClient-PHP-SF2/actions/workflows/ci.yml/badge.svg)](https://github.com/keenlabs/KeenClient-PHP-SF2/actions/workflows/ci.yml)
 
 ### Overview
 
