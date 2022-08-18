@@ -1,0 +1,55 @@
+name: CI
+
+on:
+    push:
+    pull_request:
+
+jobs:
+    check_composer:
+        name: Check composer.json
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: shivammathur/setup-php@v2
+              with:
+                  coverage: none
+                  php-version: '8.1'
+            - run: composer validate --strict --no-check-lock
+
+    tests:
+        name: "Tests on PHP ${{ matrix.php }}${{ matrix.name_suffix }}"
+        runs-on: ubuntu-latest
+
+        strategy:
+            fail-fast: false
+            matrix:
+                php: [ '7.2', '7.3', '7.4' ]
+                name_suffix: [ '' ]
+                composer_flags: [ '' ]
+                symfony_version: [ '' ]
+                include:
+                    - php: '7.2'
+                      name_suffix: ' (lowest deps)'
+                      composer_flags: '--prefer-lowest'
+                    # Test against Symfony LTS versions
+                    - php: '7.2'
+                      name_suffix: ' (Symfony 3)'
+                      composer_flags: ''
+                      symfony_version: '^3'
+
+        steps:
+            -   uses: actions/checkout@v3
+            -   uses: shivammathur/setup-php@v2
+                with:
+                    coverage: "none"
+                    php-version: "${{ matrix.php }}"
+
+            -   name: Configure Symfony version
+                if: "matrix.symfony_version != ''"
+                run: composer require --dev --no-update symfony/lts=${{ matrix.symfony_version }}
+
+            -   name: Install dependencies
+                run: composer update --ansi --no-progress --prefer-dist --no-interaction ${{ matrix.composer_flags }}
+
+            -   name: Run tests
+                run: vendor/bin/phpunit -v --colors=always
