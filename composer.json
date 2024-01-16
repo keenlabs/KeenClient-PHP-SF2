@@ -19,14 +19,14 @@
     "require":     {
         "php": ">=7.2",
         "keen-io/keen-io": "~2.5",
-        "symfony/config": "^4.4 || ^5.4 || ^6.0",
-        "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.0",
-        "symfony/http-kernel": "^4.4.13 || ^5.4 || ^6.0"
+        "symfony/config": "^4.4 || ^5.4 || ^6.0 || ^7.0",
+        "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.0 || ^7.0",
+        "symfony/http-kernel": "^4.4.13 || ^5.4 || ^6.0 || ^7.0"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^4.4 || ^5.4 || ^6.0",
-        "symfony/yaml": "^4.4 || ^5.4 || ^6.0",
-        "phpunit/phpunit": "^8.5.2 || ^9.0.1"
+        "symfony/phpunit-bridge": "^6.4.2 || ^7.0.2",
+        "symfony/yaml": "^4.4 || ^5.4 || ^6.0 || ^7.0",
+        "phpunit/phpunit": "^8.5.2 || ^9.6.15"
     },
     "autoload": {
         "psr-4": {
