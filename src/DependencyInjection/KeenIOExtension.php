@@ -7,6 +7,10 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 
+/**
+ * @final
+ * @internal
+ */
 class KeenIOExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
