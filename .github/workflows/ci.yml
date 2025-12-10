@@ -9,11 +9,11 @@ jobs:
         name: Check composer.json
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v6
             - uses: shivammathur/setup-php@v2
               with:
                   coverage: none
-                  php-version: '8.3'
+                  php-version: '8.4'
             - run: composer validate --strict --no-check-lock
 
     tests:
@@ -23,7 +23,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [ '7.2', '7.3', '7.4', '8.0', '8.1', '8.2', '8.3' ]
+                php: [ '7.2', '7.3', '7.4', '8.0', '8.1', '8.2', '8.3', '8.4', '8.5' ]
                 name_suffix: [ '' ]
                 composer_flags: [ '' ]
                 symfony_version: [ '' ]
@@ -44,9 +44,13 @@ jobs:
                       name_suffix: ' (Symfony 6)'
                       composer_flags: ''
                       symfony_version: '6.4.*'
+                    - php: '8.2'
+                      name_suffix: ' (Symfony 7)'
+                      composer_flags: ''
+                      symfony_version: '7.4.*'
 
         steps:
-            -   uses: actions/checkout@v3
+            -   uses: actions/checkout@v6
             -   uses: shivammathur/setup-php@v2
                 with:
                     coverage: "none"
